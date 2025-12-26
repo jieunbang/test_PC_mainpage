@@ -15,7 +15,7 @@
 5. Save 버튼 클릭
 
 배포 후 몇 분 후에 다음 URL에서 접근할 수 있습니다:
-`https://jieunbang.github.io/KbankPC_prototype/`
+`https://jieunbang.github.io/KBANK_PCweb_prototype`
 
 ## 로컬 실행
 
