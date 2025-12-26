@@ -378,7 +378,7 @@
     .main-card-indicator {
       position: absolute;
       right: 80px;
-      bottom: 80px;
+      bottom: 100px;
       display: flex;
       gap: 8px;
       align-items: center;
@@ -548,29 +548,22 @@
       height: 56px;
       border-radius: 1000px;
       border: 1px solid #ced4e2;
-      background: rgba(255, 255, 255, 0);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       flex-shrink: 0;
-      transition: background-color 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease;
     }
 
     .side-card-hover-button:hover {
       background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .side-card-hover-button svg {
       width: 24px;
       height: 24px;
-    }
-
-    .side-card-hover-button svg path {
-      stroke: white !important;
-      stroke-width: 1.5;
     }
 
     /* 첫 번째 사이드 카드에만 호버 적용 */
@@ -599,14 +592,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(7.5px);
+      -webkit-backdrop-filter: blur(7.5px);
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
       border-radius: 32px;
-      z-index: 2;
+      z-index: 1;
     }
 
     .text-card-hover-content {
@@ -623,7 +616,7 @@
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
-      z-index: 3;
+      z-index: 2;
     }
 
     .text-card-qr-container {
@@ -657,7 +650,7 @@
     }
 
     .side-card.text-card:hover .side-card-image {
-      opacity: 1;
+      opacity: 0;
     }
 
     .side-card.text-card .side-card-image {
@@ -669,26 +662,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #0114a7;
-      overflow: hidden;
     }
 
-    .side-card.text-card .slogan-image {
-      overflow: visible;
-    }
-
-    .side-card.text-card .side-card-image.slogan-image {
-      width: auto !important;
-      height: auto !important;
-      max-width: 200px !important;
-      max-height: 132px !important;
+    .side-card.text-card .side-card-image {
+      width: 200px;
+      height: 130px;
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      object-fit: none !important;
-      transition: opacity 0.3s ease;
-      z-index: 1;
+      object-fit: contain;
     }
 
     /* 헤더 - Figma: height=80px, max-width=1664px */
@@ -761,7 +744,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2px;
       font-family: var(--font-display);
       font-size: 18px;
       font-weight: 500;
@@ -769,28 +751,11 @@
       color: #2a2e36;
       cursor: pointer;
       white-space: nowrap;
-      transition: color 0.2s ease, font-weight 0.2s ease;
+      transition: opacity 0.2s;
     }
 
     .header-menu-item:hover {
-      color: #4262ff;
-      font-weight: 700;
-    }
-
-    .header-link-item {
-      gap: 2px;
-    }
-
-    .header-link-icon {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .header-link-item:hover .header-link-icon {
-      opacity: 1;
+      opacity: 0.7;
     }
 
     .header-button {
@@ -882,7 +847,7 @@
 
       .main-card-indicator {
         right: 40px;
-        bottom: 40px;
+        bottom: 60px;
       }
     }
 
@@ -931,7 +896,7 @@
 
       .main-card-indicator {
         right: 32px;
-        bottom: 32px;
+        bottom: 48px;
       }
     }
 
@@ -2136,12 +2101,21 @@
     .section7-phone-container {
       position: relative;
       width: 274px;
-      height: 311px;
+      height: 586px;
       flex-shrink: 0;
     }
 
     .section7-phone-frame {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 274px;
+      height: 586px;
+      border: 3px solid black;
+      border-radius: 20px;
+      z-index: 2;
+      pointer-events: none;
+      box-sizing: border-box;
     }
 
     .section7-phone-screen {
@@ -2149,9 +2123,10 @@
       top: 0;
       left: 0;
       width: 274px;
-      height: 311px;
+      height: 586px;
+      border-radius: 20px;
       object-fit: cover;
-      object-position: center;
+      object-position: top;
       z-index: 1;
     }
 
@@ -2338,8 +2313,6 @@
     .section8-title-wrapper.moved-up {
       top: 152px;
       transform: translate(-50%, 0);
-      opacity: 0;
-      pointer-events: none;
     }
 
     .section8-title-wrapper.moved-up .section8-title-highlight {
@@ -2358,8 +2331,6 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.5s ease-out;
-      overflow-y: auto;
-      overflow-x: hidden;
     }
 
     .section8-story-content.visible {
@@ -2374,58 +2345,17 @@
       pointer-events: none;
     }
 
-    /* 섹션 8 스크롤 영역 래퍼 */
-    .section8-scroll-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 섹션 8-1 컨텐츠 영역 (뷰포트 전체 차지) */
-    .section8-story-area {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 스크롤 영역 내 타이틀 */
-    .section8-story-title-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 152px;
-      padding-bottom: 0;
-      flex-shrink: 0;
-    }
-
-    .section8-story-title-wrapper .section8-title {
-      position: relative;
-      top: auto;
-      left: auto;
-      transform: none;
-    }
-
-    .section8-story-title-wrapper .section8-title-text {
-      opacity: 1;
-      transform: none;
-    }
-
-    .section8-story-title-wrapper .section8-title-bar {
-      opacity: 1;
-      transform: none;
-    }
-
-    .section8-story-title-wrapper .section8-title-highlight {
-      color: #17191e;
-      opacity: 1;
-    }
-
     /* 컨텐츠 리스트 컨테이너 */
     .section8-contents-container {
-      position: relative;
+      position: absolute;
+      top: 280px;
+      left: 0;
       width: 100%;
-      flex: 1;
+      height: calc(100% - 280px);
       overflow: hidden;
-      opacity: 1;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       display: flex;
       align-items: center;
       padding-top: 0;
@@ -2434,54 +2364,7 @@
 
     .section8-contents-container.visible {
       opacity: 1;
-    }
-
-    .section8-contents-container .section8-contents-list {
-      transform: translateY(0);
-    }
-
-    /* 섹션 8 내부 푸터 */
-    .section8-footer {
-      background: #ffffff;
-      width: 100%;
-    }
-
-    .section8-footer .footer-top {
-      padding-top: 264px;
-      padding-bottom: 160px;
-    }
-
-    .section8-footer .footer-logo-wrapper {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .section8-footer .footer-logo-wrapper.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section8-footer .footer-title {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
-    }
-
-    .section8-footer .footer-title.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section8-footer .footer-bottom {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
-    }
-
-    .section8-footer .footer-bottom.visible {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateY(-10%);
     }
 
     /* 컨텐츠 리스트 */
@@ -2514,9 +2397,9 @@
     }
 
     .section8-story-card:hover {
-      transform: scale(1.1);
+      transform: scale(1.2);
       z-index: 10;
-      margin: 0 calc((0.1 * (100vw - 320px - 48px) / 2) / 2);
+      margin: 0 calc((0.2 * (100vw - 320px - 48px) / 2) / 2);
     }
 
     @media (min-width: 1920px) {
@@ -2527,7 +2410,7 @@
 
     .section8-story-card-image-wrapper {
       width: 100%;
-      aspect-ratio: 580 / 396;
+      aspect-ratio: 580 / 326;
       border-radius: 26px;
       overflow: hidden;
       background-color: #e0e6f1;
@@ -2631,7 +2514,6 @@
       height: 100%;
       object-fit: contain;
       border-radius: 28px;
-      box-shadow: 0 8px 32px rgba(1, 20, 167, 0.25), 0 4px 16px rgba(0, 0, 0, 0.1);
     }
 
     .footer-title {
@@ -2818,18 +2700,8 @@
         <div class="header-menu-item">상품안내</div>
         <div class="header-menu-item">혜택</div>
         <div class="header-menu-item">고객센터</div>
-        <div class="header-menu-item header-link-item">
-          <span>인재영입</span>
-          <svg class="header-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="header-menu-item header-link-item">
-          <span>기업뱅킹</span>
-          <svg class="header-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+        <div class="header-menu-item">인재영입</div>
+        <div class="header-menu-item">기업뱅킹</div>
       </div>
       <button class="header-button">앱 다운로드</button>
     </div>
@@ -2918,13 +2790,13 @@
               <div class="side-card-hover-title">인재영입 바로가기</div>
               <button class="side-card-hover-button">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 12L18 12M18 12L12 6M18 12L12 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 6L15 12L9 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
             </div>
           </div>
           <div class="side-card text-card">
-            <img src="images/main_slogan.svg" alt="기분좋은 금융생활" class="side-card-image slogan-image" />
+            <img src="./images/side-card-2.png" alt="" class="side-card-image" />
             <!-- 호버 상태 -->
             <div class="text-card-hover-overlay"></div>
             <div class="text-card-hover-content">
@@ -3192,7 +3064,7 @@
           </div>
           <div class="section7-phone-container">
             <div class="section7-phone-frame"></div>
-            <img src="images/section7-phone-mockup.png" alt="사장님 홈" class="section7-phone-screen" />
+            <img src="./images/section7-phone.png" alt="사장님 홈" class="section7-phone-screen" />
           </div>
         </div>
 
@@ -3236,152 +3108,56 @@
 
     <!-- 섹션 8_1: 케이뱅크 속 스토리 컨텐츠 -->
     <div class="section8-story-content">
-      <div class="section8-scroll-wrapper">
-        <!-- 섹션 8-1 영역 (뷰포트 전체) -->
-        <div class="section8-story-area">
-          <!-- 스크롤 영역 내 타이틀 -->
-          <div class="section8-story-title-wrapper">
-            <div class="section8-title">
-              <span class="section8-title-text visible">케이뱅크 속</span>
-              <div class="section8-title-box">
-                <div class="section8-title-bar visible"></div>
-                <span class="section8-title-highlight visible">스토리.</span>
-              </div>
+      <div class="section8-contents-container">
+        <div class="section8-contents-list">
+          <!-- 스토리 카드 1 -->
+          <div class="section8-story-card">
+            <div class="section8-story-card-image-wrapper">
+              <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
+            </div>
+            <div class="section8-story-card-text">
+              <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
+              <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
             </div>
           </div>
-          <div class="section8-contents-container">
-          <div class="section8-contents-list">
-            <!-- 스토리 카드 1 -->
-            <div class="section8-story-card">
-              <div class="section8-story-card-image-wrapper">
-                <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
-              </div>
-              <div class="section8-story-card-text">
-                <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
-                <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
-              </div>
+          <!-- 스토리 카드 2 -->
+          <div class="section8-story-card">
+            <div class="section8-story-card-image-wrapper">
+              <img src="./images/story_card_2.png" alt="스토리 이미지" class="section8-story-card-image">
             </div>
-            <!-- 스토리 카드 2 -->
-            <div class="section8-story-card">
-              <div class="section8-story-card-image-wrapper">
-                <img src="./images/story_card_2.png" alt="스토리 이미지" class="section8-story-card-image">
-              </div>
-              <div class="section8-story-card-text">
-                <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
-                <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
-              </div>
-            </div>
-            <!-- 스토리 카드 3 -->
-            <div class="section8-story-card">
-              <div class="section8-story-card-image-wrapper">
-                <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
-              </div>
-              <div class="section8-story-card-text">
-                <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
-                <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
-              </div>
-            </div>
-            <!-- 스토리 카드 4 -->
-            <div class="section8-story-card">
-              <div class="section8-story-card-image-wrapper">
-                <img src="./images/story_card_2.png" alt="스토리 이미지" class="section8-story-card-image">
-              </div>
-              <div class="section8-story-card-text">
-                <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
-                <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
-              </div>
-            </div>
-            <!-- 스토리 카드 5 -->
-            <div class="section8-story-card">
-              <div class="section8-story-card-image-wrapper">
-                <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
-              </div>
-              <div class="section8-story-card-text">
-                <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
-                <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
-              </div>
+            <div class="section8-story-card-text">
+              <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
+              <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
             </div>
           </div>
-        </div>
-        </div>
-        <!-- 섹션 8 내부 푸터 -->
-        <div class="section8-footer">
-          <div class="footer-top">
-            <div class="footer-logo-wrapper">
-              <img src="./images/kbank_app_icon.png" alt="Kbank" class="footer-logo-img">
+          <!-- 스토리 카드 3 -->
+          <div class="section8-story-card">
+            <div class="section8-story-card-image-wrapper">
+              <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
             </div>
-            <div class="footer-title">
-              하나의 앱에서<br>모두 경험하세요
+            <div class="section8-story-card-text">
+              <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
+              <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
             </div>
           </div>
-          <div class="footer-bottom">
-            <div class="footer-inner">
-              <!-- 고객센터 -->
-              <div class="footer-customer-center">
-                <div class="footer-section-title">고객센터</div>
-                <div class="footer-contact-list">
-                  <div class="footer-contact-item">
-                    <span>은행</span>
-                    <span>1522-1000</span>
-                  </div>
-                  <div class="footer-contact-item">
-                    <span>카드</span>
-                    <span>1522-1155</span>
-                  </div>
-                  <div class="footer-contact-item">
-                    <span>해외</span>
-                    <span>82-2-3778-9111</span>
-                  </div>
-                </div>
-              </div>
-              <!-- 고객권리 및 공시정보 -->
-              <div class="footer-rights">
-                <div class="footer-section-title">고객권리 및 공시정보</div>
-                <div class="footer-links">
-                  <div class="footer-link">개인정보처리방침</div>
-                  <div class="footer-link">신용정보활용체제</div>
-                  <div class="footer-link">경영공시</div>
-                  <div class="footer-link">준법제보</div>
-                  <div class="footer-link">전자민원</div>
-                  <div class="footer-link">상품공시실</div>
-                  <div class="footer-link">보호금융상품등록부</div>
-                  <div class="footer-link">금융소비자보호</div>
-                  <div class="footer-link">케이뱅크 기업뱅킹</div>
-                </div>
-              </div>
-              <!-- 인증 및 소셜 -->
-              <div class="footer-certification">
-                <div class="footer-cert-logos">
-                  <img src="./images/cert_isms.png" alt="ISMS-P" class="footer-cert-logo">
-                  <img src="./images/cert_wa.png" alt="WA" class="footer-cert-logo">
-                </div>
-                <div class="footer-cert-text">
-                  인증범위 : 전자금융서비스(모바일) 및 홈페이지 (심사받지 않은 물리적 인프라 제외)<br>
-                  유효기간 : 2025.05.27 ~ 2028.05.26
-                </div>
-                <div class="footer-social">
-                  <a href="#" class="footer-social-icon" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="white">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </a>
-                  <a href="#" class="footer-social-icon" aria-label="Naver Blog">
-                    <svg viewBox="0 0 24 24" fill="white">
-                      <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/>
-                    </svg>
-                  </a>
-                  <a href="#" class="footer-social-icon" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24" fill="white">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
-                  <a href="#" class="footer-social-icon" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="white">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+          <!-- 스토리 카드 4 -->
+          <div class="section8-story-card">
+            <div class="section8-story-card-image-wrapper">
+              <img src="./images/story_card_2.png" alt="스토리 이미지" class="section8-story-card-image">
+            </div>
+            <div class="section8-story-card-text">
+              <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
+              <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
+            </div>
+          </div>
+          <!-- 스토리 카드 5 -->
+          <div class="section8-story-card">
+            <div class="section8-story-card-image-wrapper">
+              <img src="./images/story_card_1.png" alt="스토리 이미지" class="section8-story-card-image">
+            </div>
+            <div class="section8-story-card-text">
+              <div class="section8-story-card-title">내 코드가 고객에게 닿기를...</div>
+              <div class="section8-story-card-desc">수신개발팀 서원대님 내가 짠 코드가 고객에게 어떤 영향을 미치는지 궁금하신가요? 개발의 경이로움을 체험할 수 있는 케이뱅크에서 wonder 원대님을 만나보았어요.</div>
             </div>
           </div>
         </div>
@@ -3557,18 +3333,12 @@
     const section8StoryContent = document.querySelector('.section8-story-content');
     const section8ContentsContainer = document.querySelector('.section8-contents-container');
     const section8ContentsList = document.querySelector('.section8-contents-list');
-    
-    // 섹션 8 내부 푸터 요소들
-    const section8Footer = document.querySelector('.section8-footer');
-    const section8FooterLogoWrapper = section8Footer ? section8Footer.querySelector('.footer-logo-wrapper') : null;
-    const section8FooterTitle = section8Footer ? section8Footer.querySelector('.footer-title') : null;
-    const section8FooterBottom = section8Footer ? section8Footer.querySelector('.footer-bottom') : null;
 
     // 섹션 9 요소들 (푸터)
     const section9Content = document.querySelector('.section9-content');
-    const footerLogoWrapper = document.querySelector('.section9-content .footer-logo-wrapper');
-    const footerTitle = document.querySelector('.section9-content .footer-title');
-    const footerBottom = document.querySelector('.section9-content .footer-bottom');
+    const footerLogoWrapper = document.querySelector('.footer-logo-wrapper');
+    const footerTitle = document.querySelector('.footer-title');
+    const footerBottom = document.querySelector('.footer-bottom');
 
     // 섹션 8 스토리 모드 관련
     let section8StoryMode = false;
@@ -3576,7 +3346,6 @@
     let section8MaxScroll = 0;
     let section8HoverEnabled = false;
     let section8FooterOverlay = false;
-    let section8FooterAnimated = false;
 
     // 섹션 8 호버 기반 네비게이션
     function initSection8HoverNav() {
@@ -3617,7 +3386,7 @@
     initSection8HoverNav();
 
     let currentStep = 0;
-    const totalSteps = 8;
+    const totalSteps = 9;
     let isAnimating = false;
     let lastWheelTime = 0;
     const wheelCooldown = 800;
@@ -4427,12 +4196,6 @@
           section8ContentsList.style.transform = 'translateX(0)';
           section8TitleWrapper.classList.remove('moved-up');
           
-          // footer 애니메이션 상태 초기화
-          section8FooterAnimated = false;
-          if (section8FooterLogoWrapper) section8FooterLogoWrapper.classList.remove('visible');
-          if (section8FooterTitle) section8FooterTitle.classList.remove('visible');
-          if (section8FooterBottom) section8FooterBottom.classList.remove('visible');
-          
           // 섹션 8 요소들 숨기기
           setTimeout(() => {
             section8TitleHighlight.classList.remove('visible');
@@ -4534,6 +4297,132 @@
             isAnimating = false;
           }, 1600);
         }
+        // 섹션 9에서 섹션 8로 돌아갈 때
+        else if (prevStep === 9) {
+          // 헤더 상태 초기화
+          headerShownInSection9 = false;
+          header.classList.remove('section9-header');
+          
+          // 푸터 요소들 페이드아웃
+          footerBottom.classList.remove('visible');
+          footerTitle.classList.remove('visible');
+          footerLogoWrapper.classList.remove('visible');
+          
+          setTimeout(() => {
+            section9Content.classList.remove('visible');
+          }, 300);
+
+          setTimeout(() => {
+            background.classList.remove('section9');
+            background.classList.add('section8-story');
+            
+            // 섹션 8 타이틀 애니메이션 비활성화 (즉시 표시)
+            section8TitleText.style.transition = 'none';
+            section8TitleBar.style.transition = 'none';
+            section8TitleHighlight.style.transition = 'none';
+            section8TitleWrapper.style.transition = 'none';
+            section8ContentsContainer.style.transition = 'none';
+          }, 400);
+
+          setTimeout(() => {
+            // 섹션 8 스토리 모드로 복원
+            section8StoryMode = true;
+            section8HoverEnabled = true;
+            section8Content.classList.add('visible');
+            section8TitleWrapper.classList.add('visible');
+            section8TitleWrapper.classList.add('moved-up');
+            section8TitleText.classList.add('visible');
+            section8TitleBar.classList.add('visible');
+            section8TitleHighlight.classList.add('visible');
+            section8StoryContent.classList.add('visible');
+            section8ContentsContainer.classList.add('visible');
+            
+            // 호버 네비게이션이 처리하도록 초기 위치는 0으로
+            section8ScrollPosition = 0;
+            section8ContentsList.style.transform = 'translateX(0)';
+          }, 500);
+
+          // 트랜지션 스타일 복원
+          setTimeout(() => {
+            section8TitleText.style.transition = '';
+            section8TitleBar.style.transition = '';
+            section8TitleHighlight.style.transition = '';
+            section8TitleWrapper.style.transition = '';
+            section8ContentsContainer.style.transition = '';
+          }, 600);
+
+          setTimeout(() => {
+            isAnimating = false;
+          }, 1000);
+        }
+      }
+
+      // Step 9: 푸터
+      else if (step === 9) {
+        // 섹션 8에서 섹션 9로
+        if (prevStep === 8) {
+          // 헤더 상태 초기화
+          headerShownInSection8 = false;
+          
+          // 타이틀과 스토리 컨텐츠 동시에 페이드아웃 (움직임 없이)
+          section8TitleWrapper.style.transition = 'opacity 0.5s ease-out';
+          section8TitleWrapper.style.opacity = '0';
+          section8ContentsContainer.style.transition = 'opacity 0.5s ease-out';
+          section8ContentsContainer.style.opacity = '0';
+
+          setTimeout(() => {
+            // 스토리 모드 초기화
+            section8StoryMode = false;
+            section8HoverEnabled = false;
+            section8FooterOverlay = false;
+            section8ScrollPosition = 0;
+            section8ContentsContainer.classList.remove('visible');
+            section8StoryContent.classList.remove('visible');
+            section8ContentsList.style.transform = 'translateX(0)';
+            section8Content.classList.remove('visible');
+            section8TitleWrapper.classList.remove('visible');
+            section8TitleWrapper.classList.remove('moved-up');
+            
+            // 스타일 초기화
+            section8TitleWrapper.style.transition = '';
+            section8TitleWrapper.style.opacity = '';
+            section8ContentsContainer.style.transition = '';
+            section8ContentsContainer.style.opacity = '';
+            
+            // 타이틀 요소들도 초기화
+            section8TitleHighlight.classList.remove('visible');
+            section8TitleBar.classList.remove('visible');
+            section8TitleText.classList.remove('visible');
+            
+            background.classList.remove('section8', 'section8-story');
+            background.classList.add('section9');
+            header.classList.remove('visible');
+          }, 500);
+
+          // 섹션 9 컨텐츠 표시
+          setTimeout(() => {
+            section9Content.classList.add('visible');
+          }, 600);
+
+          // 순차적 애니메이션: 로고
+          setTimeout(() => {
+            footerLogoWrapper.classList.add('visible');
+          }, 700);
+
+          // 순차적 애니메이션: 타이틀
+          setTimeout(() => {
+            footerTitle.classList.add('visible');
+          }, 900);
+
+          // 순차적 애니메이션: 하단 푸터
+          setTimeout(() => {
+            footerBottom.classList.add('visible');
+          }, 1100);
+
+          setTimeout(() => {
+            isAnimating = false;
+          }, 1800);
+        }
       }
 
     }
@@ -4580,10 +4469,15 @@
       }
       // 섹션 8 스토리 모드에서 스크롤 업
       if (currentStep === 8 && section8StoryMode) {
-        // 스크롤이 맨 위에 있을 때만 처리
-        const scrollTop = section8StoryContent ? section8StoryContent.scrollTop : 0;
-        if (scrollTop > 0) {
-          return false; // 자연 스크롤 허용
+        // 푸터 오버레이 상태면 먼저 푸터 숨기기
+        if (section8FooterOverlay) {
+          section9Content.classList.remove('visible');
+          footerLogoWrapper.classList.remove('visible');
+          footerTitle.classList.remove('visible');
+          footerBottom.classList.remove('visible');
+          section8StoryContent.classList.remove('scroll-out');
+          section8FooterOverlay = false;
+          return true;
         }
         
         // 헤더 안보이면 헤더 표시
@@ -4596,25 +4490,22 @@
         // 헤더 보이는 상태에서 스크롤 업 → 스토리 모드 해제하고 원래 상태로
         section8StoryMode = false;
         section8HoverEnabled = false;
+        section8FooterOverlay = false;
         header.classList.remove('visible');
         headerShownInSection8 = false;
         
         // 컨텐츠 숨기기
         section8ContentsContainer.classList.remove('visible');
         section8StoryContent.classList.remove('visible');
+        section8StoryContent.classList.remove('scroll-out');
         section8ContentsList.style.transform = 'translateX(0)';
         section8ScrollPosition = 0;
         
-        // footer 애니메이션 상태 초기화
-        section8FooterAnimated = false;
-        if (section8FooterLogoWrapper) section8FooterLogoWrapper.classList.remove('visible');
-        if (section8FooterTitle) section8FooterTitle.classList.remove('visible');
-        if (section8FooterBottom) section8FooterBottom.classList.remove('visible');
-        
-        // 스크롤 위치 초기화
-        if (section8StoryContent) {
-          section8StoryContent.scrollTop = 0;
-        }
+        // 푸터 오버레이 숨기기
+        section9Content.classList.remove('visible');
+        footerLogoWrapper.classList.remove('visible');
+        footerTitle.classList.remove('visible');
+        footerBottom.classList.remove('visible');
         
         // 배경색 복원
         background.classList.remove('section8-story');
@@ -4630,6 +4521,18 @@
         header.classList.add('visible');
         headerShownInSection8 = true;
         return true;
+      }
+      // 섹션 9에서 스크롤 업
+      if (currentStep === 9) {
+        // 헤더 안보이면 먼저 보이기
+        if (!headerShownInSection9) {
+          header.classList.add('visible');
+          header.classList.add('section9-header');
+          headerShownInSection9 = true;
+          return true;
+        }
+        // 헤더 보이는 상태에서 스크롤 업 → 섹션 8로 이동
+        return false;
       }
       return false;
     }
@@ -4670,6 +4573,13 @@
         headerShownInSection8 = false;
         return true;
       }
+      // 섹션 9에서 헤더 숨기기
+      if (currentStep === 9 && headerShownInSection9) {
+        header.classList.remove('visible');
+        header.classList.remove('section9-header');
+        headerShownInSection9 = false;
+        return true;
+      }
       // 섹션 8에서 스크롤 다운 → 스토리 모드
       if (currentStep === 8) {
         // 헤더가 보이면 먼저 숨기기
@@ -4695,15 +4605,36 @@
           setTimeout(() => {
             section8StoryContent.classList.add('visible');
             section8ContentsContainer.classList.add('visible');
-            // 스크롤 위치 초기화
-            section8StoryContent.scrollTop = 0;
           }, 500);
           
           return true;
         }
         
-        // 스토리 모드에서는 자연 스크롤 허용 (hideHeader 처리 안함)
-        return false;
+        // 이미 푸터 오버레이 상태면 다음 섹션으로
+        if (section8FooterOverlay) {
+          return false;
+        }
+        
+        // 스토리 모드에서 스크롤 다운하면 스토리 컨텐츠 위로 올리면서 푸터 표시
+        section8StoryContent.classList.add('scroll-out');
+        section8FooterOverlay = true;
+        
+        // 푸터 섹션 표시 준비
+        setTimeout(() => {
+          section9Content.classList.add('visible');
+          // 푸터 컨텐츠 순차적으로 표시
+          setTimeout(() => {
+            footerLogoWrapper.classList.add('visible');
+          }, 200);
+          setTimeout(() => {
+            footerTitle.classList.add('visible');
+          }, 400);
+          setTimeout(() => {
+            footerBottom.classList.add('visible');
+          }, 600);
+        }, 300);
+        
+        return true;
       }
       // 섹션 3에서 스크롤 다운 → 타이틀 위로 + 비디오 표시
       if (currentStep === 3 && !section3VideoMode) {
@@ -4720,29 +4651,6 @@
 
     // 스크롤 이벤트 처리
     function handleWheel(e) {
-      // 섹션 8 스토리 모드에서는 자연 스크롤 허용
-      if (section8StoryMode && section8StoryContent) {
-        const scrollTop = section8StoryContent.scrollTop;
-        const scrollHeight = section8StoryContent.scrollHeight;
-        const clientHeight = section8StoryContent.clientHeight;
-        
-        // 스크롤 업하고 맨 위에 있을 때만 이전 섹션으로 이동 가능
-        if (e.deltaY < 0 && scrollTop <= 0) {
-          e.preventDefault();
-          const now = Date.now();
-          if (now - lastWheelTime < wheelCooldown) return;
-          if (Math.abs(e.deltaY) < 20) return;
-          lastWheelTime = now;
-          
-          if (showHeaderInCurrentSection()) return;
-          goToStep(currentStep - 1, -1);
-          return;
-        }
-        
-        // 그 외에는 자연 스크롤 허용
-        return;
-      }
-      
       e.preventDefault();
 
       const now = Date.now();
@@ -4768,23 +4676,6 @@
 
     // 이벤트 리스너
     window.addEventListener('wheel', handleWheel, { passive: false });
-
-    // 섹션 8 스토리 컨텐츠 스크롤 이벤트 (footer 애니메이션)
-    if (section8StoryContent) {
-      section8StoryContent.addEventListener('scroll', () => {
-        if (!section8FooterAnimated && section8Footer) {
-          const footerRect = section8Footer.getBoundingClientRect();
-          const triggerPoint = window.innerHeight * 0.8;
-          
-          if (footerRect.top < triggerPoint) {
-            section8FooterAnimated = true;
-            if (section8FooterLogoWrapper) section8FooterLogoWrapper.classList.add('visible');
-            if (section8FooterTitle) section8FooterTitle.classList.add('visible');
-            if (section8FooterBottom) section8FooterBottom.classList.add('visible');
-          }
-        }
-      });
-    }
 
     // 스크롤 인디케이터 클릭
     scrollIndicator.addEventListener('click', () => {
