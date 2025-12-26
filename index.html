@@ -824,14 +824,15 @@
       animation-delay: 1.8s, 2.6s;
     }
 
-    /* 반응형 */
-    @media (max-width: 1700px) {
+    /* 반응형 - max 1600px */
+    @media (max-width: 1600px) {
       .main-content-wrapper {
         padding: 30px 80px;
       }
       
       .card-section {
         height: calc(100vh - 80px - 60px);
+        max-width: 1440px;
       }
 
       .main-card {
@@ -839,21 +840,39 @@
       }
 
       .side-cards {
-        width: 380px;
+        width: 360px;
+      }
+
+      .main-card-content {
+        left: 60px;
+        bottom: 60px;
+        right: 60px;
+      }
+
+      .main-card-title {
+        font-size: 44px;
+      }
+
+      .main-card-indicator {
+        right: 60px;
+        bottom: 80px;
       }
     }
 
-    @media (max-width: 1400px) {
+    /* 반응형 - max 1280px */
+    @media (max-width: 1280px) {
       .main-content-wrapper {
         padding: 24px 40px;
       }
 
       .card-section {
         height: calc(100vh - 80px - 48px);
+        gap: 16px;
       }
 
       .side-cards {
-        width: 340px;
+        width: 320px;
+        gap: 16px;
       }
 
       .main-card-content {
@@ -863,7 +882,7 @@
       }
 
       .main-card-title {
-        font-size: 44px;
+        font-size: 40px;
       }
 
       .side-card-content {
@@ -881,19 +900,21 @@
       }
     }
 
-    @media (max-width: 1200px) {
+    /* 반응형 - min 1080px */
+    @media (max-width: 1080px) {
       .main-content-wrapper {
         padding: 20px 24px;
       }
 
       .card-section {
-        gap: 16px;
+        gap: 12px;
         height: calc(100vh - 80px - 40px);
+        min-width: 1032px;
       }
 
       .side-cards {
-        width: 300px;
-        gap: 16px;
+        width: 280px;
+        gap: 12px;
       }
 
       .main-card {
