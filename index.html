@@ -2586,83 +2586,66 @@
 
     /* vw 단위 사용으로 푸터 브레이크포인트 불필요 */
 
-    /* A/B 비교 토글 바 */
-    .ab-toggle-bar {
-      position: fixed;
-      top: 0;
+    /* A/B 비교 토글 - 사이드 카드 상단 외부 배치 */
+    .ab-toggle-wrapper {
+      position: absolute;
+      top: -40px;
       left: 0;
-      width: 100%;
-      height: 48px;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      right: 0;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 16px;
-      z-index: 10001;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .ab-toggle-bar .ab-label {
-      color: #a0a0a0;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    .ab-toggle-buttons {
-      display: flex;
       gap: 8px;
+      width: 100%;
+    }
+    
+    /* side-cards에 relative 추가 */
+    .side-cards {
+      position: relative;
     }
 
     .ab-toggle-btn {
-      padding: 8px 20px;
-      border: none;
-      border-radius: 20px;
-      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 11px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.1);
-      color: #a0a0a0;
+      background: #ffffff;
+      color: #666;
+      border: 1px solid #ddd;
     }
 
     .ab-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: #f0f0f0;
+      color: #333;
     }
 
     .ab-toggle-btn.active {
       background: #4262ff;
       color: #fff;
-      box-shadow: 0 4px 12px rgba(66, 98, 255, 0.4);
+      border-color: #4262ff;
+      box-shadow: 0 2px 8px rgba(66, 98, 255, 0.4);
+    }
+
+    .ab-toggle-btn.version-b:not(.active) {
+      background: #fff0f0;
+      color: #ff6b6b;
+      border-color: #ffcccc;
+    }
+
+    .ab-toggle-btn.version-b:not(.active):hover {
+      background: #ffe0e0;
     }
 
     .ab-toggle-btn.active.version-b {
       background: #ff6b6b;
-      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
-    }
-
-    /* 헤더 위치 조정 (토글바 높이만큼) */
-    .global-header {
-      top: 48px !important;
-    }
-
-    /* 컨테이너 패딩 조정 */
-    body {
-      padding-top: 48px;
+      color: #fff;
+      border-color: #ff6b6b;
+      box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
     }
   </style>
 </head>
 <body>
-  <!-- A/B 비교 토글 바 -->
-  <div class="ab-toggle-bar">
-    <span class="ab-label">사이드 카드 이미지 비교:</span>
-    <div class="ab-toggle-buttons">
-      <button class="ab-toggle-btn active" data-version="a">A안 (현재)</button>
-      <button class="ab-toggle-btn version-b" data-version="b">B안 (신규)</button>
-    </div>
-  </div>
-
   <div class="global-header" data-name="GlobalHeader">
     <div class="header-content" data-name="ContainerGroup">
       <div class="header-logo-box" data-name="BrandLogoBox">
@@ -2757,6 +2740,11 @@
 
         <!-- 사이드 카드: 426px x 420px (2개) -->
         <div class="side-cards">
+          <!-- A/B 비교 토글 버튼 -->
+          <div class="ab-toggle-wrapper">
+            <button class="ab-toggle-btn active" data-version="a">A안</button>
+            <button class="ab-toggle-btn version-b" data-version="b">B안</button>
+          </div>
           <div class="side-card">
             <img src="./images/side-card-1.png" alt="" class="side-card-image" id="side-card-1-img" />
             <div class="side-card-gradient"></div>
