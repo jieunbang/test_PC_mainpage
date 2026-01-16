@@ -79,14 +79,14 @@
 
     .hero-title-container {
       position: relative;
-      height: 76px;
-      width: 1068px;
+      height: clamp(60px, 3.96vw, 76px);
+      width: clamp(800px, 55.6vw, 1068px);
     }
 
     .text-part {
-      font-size: 64px;
+      font-size: clamp(40px, 3.33vw, 64px);
       font-weight: 700;
-      letter-spacing: -0.32px;
+      letter-spacing: -0.017em;
       line-height: 1.35;
       white-space: nowrap;
     }
@@ -94,11 +94,11 @@
     .text-part-1 {
       position: absolute;
       left: 0;
-      top: 38px;
+      top: 50%;
       transform: translateY(-50%);
       color: var(--color-fg-invert);
-      width: 400px;
-      height: 76px;
+      width: clamp(300px, 20.8vw, 400px);
+      height: clamp(60px, 3.96vw, 76px);
       display: flex;
       align-items: center;
       opacity: 0;
@@ -108,11 +108,11 @@
 
     .text-part-2 {
       position: absolute;
-      left: 420px;
+      left: clamp(315px, 21.9vw, 420px);
       top: 0;
       color: var(--color-fg-invert);
-      width: 276px;
-      height: 76px;
+      width: clamp(200px, 14.4vw, 276px);
+      height: clamp(60px, 3.96vw, 76px);
       display: flex;
       align-items: center;
       opacity: 0;
@@ -122,18 +122,18 @@
 
     .text-part-3-wrapper {
       position: absolute;
-      left: 707px;
+      left: clamp(530px, 36.8vw, 707px);
       top: 0;
-      width: 373px;
-      height: 76px;
+      width: clamp(280px, 19.4vw, 373px);
+      height: clamp(60px, 3.96vw, 76px);
     }
 
     .white-box {
       position: absolute;
       background-color: white;
       border-radius: 8px;
-      width: 373px;
-      height: 76px;
+      width: 100%;
+      height: 100%;
       left: 0;
       top: 0;
       z-index: 0;
@@ -148,7 +148,7 @@
       left: 0;
       top: 0;
       width: 100%;
-      height: 76px;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,11 +186,11 @@
 
     .scroll-indicator {
       position: absolute;
-      bottom: 40px;
+      bottom: clamp(28px, 2.08vw, 40px);
       left: 50%;
       transform: translateX(-50%);
-      width: 55px;
-      height: 24px;
+      width: clamp(40px, 2.86vw, 55px);
+      height: clamp(18px, 1.25vw, 24px);
       opacity: 0;
       animation: fadeIn 0.8s ease-out forwards;
       animation-delay: 1.8s;
@@ -211,14 +211,14 @@
     /* 메인 콘텐츠 래퍼 - 헤더 제외 영역에서 수직 중앙 정렬 */
     .main-content-wrapper {
       position: absolute;
-      top: 80px;
+      top: clamp(60px, 4.17vw, 80px);
       left: 0;
       right: 0;
-      height: calc(100vh - 80px);
+      height: calc(100vh - clamp(60px, 4.17vw, 80px));
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 160px;
+      padding: 0 clamp(24px, 8.33vw, 160px);
       z-index: 5;
       opacity: 0;
       pointer-events: none;
@@ -233,21 +233,21 @@
     /* 카드 섹션 - Figma: width=1600px, gap=20px */
     .card-section {
       display: flex;
-      gap: 20px;
+      gap: clamp(12px, 1.04vw, 20px);
       width: 100%;
       max-width: 1600px;
       align-items: stretch;
-      height: calc(100vh - 80px - 80px);
+      height: calc(100vh - clamp(60px, 4.17vw, 80px) - clamp(60px, 4.17vw, 80px));
       max-height: 860px;
     }
 
     /* 메인 카드 - Figma: width=1154px, height=860px */
     .main-card {
       background: white;
-      border-radius: 32px;
+      border-radius: clamp(20px, 1.67vw, 32px);
       flex: 1;
       max-width: 1154px;
-      min-width: 500px;
+      min-width: clamp(400px, 26vw, 500px);
       height: 100%;
       position: relative;
       overflow: hidden;
@@ -311,7 +311,7 @@
       left: 0;
       right: 0;
       height: 60%;
-      border-radius: 0 0 32px 32px;
+      border-radius: 0 0 clamp(20px, 1.67vw, 32px) clamp(20px, 1.67vw, 32px);
       background: linear-gradient(
         to top,
         rgba(22, 40, 176, 0.8) 0%,
@@ -325,30 +325,30 @@
 
     .main-card-content {
       position: absolute;
-      left: 80px;
-      bottom: 80px;
-      right: 80px;
+      left: clamp(40px, 4.17vw, 80px);
+      bottom: clamp(40px, 4.17vw, 80px);
+      right: clamp(40px, 4.17vw, 80px);
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: clamp(24px, 1.88vw, 36px);
     }
 
     .main-card-title-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: clamp(8px, 0.63vw, 12px);
     }
 
     .main-card-title {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
     }
 
     .main-card-subtitle {
-      font-size: 20px;
+      font-size: clamp(14px, 1.04vw, 20px);
       font-weight: 500;
       color: rgba(255, 255, 255, 0.8);
       line-height: 1.35;
@@ -357,10 +357,10 @@
     .main-card-button {
       background-color: #0114a7;
       color: white;
-      padding: 0 16px;
-      height: 56px;
-      border-radius: 12px;
-      font-size: 18px;
+      padding: 0 clamp(12px, 0.83vw, 16px);
+      height: clamp(40px, 2.92vw, 56px);
+      border-radius: clamp(8px, 0.63vw, 12px);
+      font-size: clamp(14px, 0.94vw, 18px);
       font-weight: 500;
       border: none;
       cursor: pointer;
@@ -377,16 +377,16 @@
 
     .main-card-indicator {
       position: absolute;
-      right: 80px;
-      bottom: 100px;
+      right: clamp(40px, 4.17vw, 80px);
+      bottom: clamp(60px, 5.21vw, 100px);
       display: flex;
-      gap: 8px;
+      gap: clamp(6px, 0.42vw, 8px);
       align-items: center;
     }
 
     .indicator-dot {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -403,14 +403,14 @@
     }
 
     .indicator-dot img {
-      width: 8px;
-      height: 8px;
+      width: clamp(6px, 0.42vw, 8px);
+      height: clamp(6px, 0.42vw, 8px);
       display: block;
     }
 
     .indicator-control {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       cursor: pointer;
       transition: transform 0.2s ease;
       background: none;
@@ -427,8 +427,8 @@
     }
 
     .indicator-control img {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       display: block;
     }
 
@@ -436,8 +436,8 @@
     .side-cards {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      width: 426px;
+      gap: clamp(12px, 1.04vw, 20px);
+      width: clamp(280px, 22.2vw, 426px);
       flex-shrink: 0;
       height: 100%;
     }
@@ -445,7 +445,7 @@
     /* 사이드 카드 - Figma: width=426px, height=420px (각각, 합쳐서 860px) */
     .side-card {
       background: #0114a7;
-      border-radius: 32px;
+      border-radius: clamp(20px, 1.67vw, 32px);
       width: 100%;
       flex: 1;
       position: relative;
@@ -473,7 +473,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      border-radius: 32px;
+      border-radius: clamp(20px, 1.67vw, 32px);
     }
 
     .side-card-gradient {
@@ -482,7 +482,7 @@
       left: 0;
       right: 0;
       height: 60%;
-      border-radius: 0 0 32px 32px;
+      border-radius: 0 0 clamp(20px, 1.67vw, 32px) clamp(20px, 1.67vw, 32px);
       background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.3) 0%,
@@ -492,17 +492,17 @@
 
     .side-card-content {
       position: absolute;
-      left: 32px;
-      bottom: 32px;
-      right: 32px;
+      left: clamp(20px, 1.67vw, 32px);
+      bottom: clamp(20px, 1.67vw, 32px);
+      right: clamp(20px, 1.67vw, 32px);
     }
 
     .side-card-title {
-      font-size: 28px;
+      font-size: clamp(18px, 1.46vw, 28px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.14px;
+      letter-spacing: -0.007em;
       transition: opacity 0.3s ease;
     }
 
@@ -536,16 +536,16 @@
     }
 
     .side-card-hover-title {
-      font-size: 28px;
+      font-size: clamp(18px, 1.46vw, 28px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.14px;
+      letter-spacing: -0.007em;
     }
 
     .side-card-hover-button {
-      width: 56px;
-      height: 56px;
+      width: clamp(40px, 2.92vw, 56px);
+      height: clamp(40px, 2.92vw, 56px);
       border-radius: 1000px;
       border: 1px solid #ced4e2;
       background: transparent;
@@ -562,8 +562,8 @@
     }
 
     .side-card-hover-button svg {
-      width: 24px;
-      height: 24px;
+      width: clamp(18px, 1.25vw, 24px);
+      height: clamp(18px, 1.25vw, 24px);
     }
 
     /* 첫 번째 사이드 카드에만 호버 적용 */
@@ -612,7 +612,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 24px;
+      gap: clamp(16px, 1.25vw, 24px);
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
@@ -620,8 +620,8 @@
     }
 
     .text-card-qr-container {
-      width: 160px;
-      height: 160px;
+      width: clamp(100px, 8.33vw, 160px);
+      height: clamp(100px, 8.33vw, 160px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -629,17 +629,17 @@
     }
 
     .text-card-qr-image {
-      width: 160px;
-      height: 160px;
+      width: clamp(100px, 8.33vw, 160px);
+      height: clamp(100px, 8.33vw, 160px);
       object-fit: contain;
     }
 
     .text-card-hover-title {
-      font-size: 28px;
+      font-size: clamp(18px, 1.46vw, 28px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.14px;
+      letter-spacing: -0.007em;
       text-align: center;
     }
 
@@ -682,7 +682,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 80px;
+      height: clamp(60px, 4.17vw, 80px);
       min-width: 1080px;
       background: rgba(228, 237, 249, 0.8);
       backdrop-filter: blur(25px);
@@ -714,13 +714,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
+      padding: 0 clamp(20px, 1.67vw, 32px);
       margin: 0 auto;
     }
 
     .header-logo-box {
-      height: 20px;
-      width: 82px;
+      height: clamp(16px, 1.04vw, 20px);
+      width: clamp(65px, 4.27vw, 82px);
       position: relative;
       flex-shrink: 0;
     }
@@ -740,14 +740,14 @@
     }
 
     .header-menu-item {
-      padding: 0 24px;
-      min-height: 56px;
-      height: 56px;
+      padding: 0 clamp(14px, 1.25vw, 24px);
+      min-height: clamp(40px, 2.92vw, 56px);
+      height: clamp(40px, 2.92vw, 56px);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: clamp(14px, 0.94vw, 18px);
       font-weight: 500;
       line-height: 1.35;
       color: #2a2e36;
@@ -770,8 +770,8 @@
     }
 
     .header-link-icon {
-      width: 14px;
-      height: 24px;
+      width: clamp(10px, 0.73vw, 14px);
+      height: clamp(16px, 1.25vw, 24px);
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
@@ -784,23 +784,23 @@
     }
 
     .header-link-icon svg {
-      width: 14px;
-      height: 14px;
+      width: clamp(10px, 0.73vw, 14px);
+      height: clamp(10px, 0.73vw, 14px);
     }
 
     .header-button {
       background-color: #4262ff;
       color: white;
-      padding: 0 14px;
-      height: 40px;
-      border-radius: 8px;
+      padding: 0 clamp(10px, 0.73vw, 14px);
+      height: clamp(32px, 2.08vw, 40px);
+      border-radius: clamp(6px, 0.42vw, 8px);
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: clamp(12px, 0.78vw, 15px);
       font-weight: 500;
       line-height: 1.35;
       border: none;
       cursor: pointer;
-      min-width: 76px;
+      min-width: clamp(60px, 3.96vw, 76px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -824,132 +824,7 @@
       animation-delay: 1.8s, 2.6s;
     }
 
-    /* 반응형 - max 1600px */
-    @media (max-width: 1600px) {
-      .main-content-wrapper {
-        padding: 30px 80px;
-      }
-      
-      .card-section {
-        height: calc(100vh - 80px - 60px);
-        max-width: 1440px;
-      }
-
-      .main-card {
-        min-width: 450px;
-      }
-
-      .side-cards {
-        width: 360px;
-      }
-
-      .main-card-content {
-        left: 60px;
-        bottom: 60px;
-        right: 60px;
-      }
-
-      .main-card-title {
-        font-size: 44px;
-      }
-
-      .main-card-indicator {
-        right: 60px;
-        bottom: 80px;
-      }
-    }
-
-    /* 반응형 - max 1280px */
-    @media (max-width: 1280px) {
-      .main-content-wrapper {
-        padding: 24px 40px;
-      }
-
-      .card-section {
-        height: calc(100vh - 80px - 48px);
-        gap: 16px;
-      }
-
-      .side-cards {
-        width: 320px;
-        gap: 16px;
-      }
-
-      .main-card-content {
-        left: 40px;
-        bottom: 40px;
-        right: 40px;
-      }
-
-      .main-card-title {
-        font-size: 40px;
-      }
-
-      .side-card-content {
-        left: 24px;
-        bottom: 24px;
-      }
-
-      .side-card-title {
-        font-size: 22px;
-      }
-
-      .main-card-indicator {
-        right: 40px;
-        bottom: 60px;
-      }
-    }
-
-    /* 반응형 - min 1080px */
-    @media (max-width: 1080px) {
-      .main-content-wrapper {
-        padding: 20px 24px;
-      }
-
-      .card-section {
-        gap: 12px;
-        height: calc(100vh - 80px - 40px);
-        min-width: 1032px;
-      }
-
-      .side-cards {
-        width: 280px;
-        gap: 12px;
-      }
-
-      .main-card {
-        min-width: 400px;
-      }
-
-      .main-card-title {
-        font-size: 36px;
-      }
-
-      .main-card-subtitle {
-        font-size: 16px;
-      }
-
-      .main-card-button {
-        height: 48px;
-        font-size: 16px;
-      }
-
-      .main-card-content {
-        left: 32px;
-        bottom: 32px;
-        right: 32px;
-        gap: 24px;
-      }
-
-      .side-card-title {
-        font-size: 20px;
-      }
-
-      .main-card-indicator {
-        right: 32px;
-        bottom: 48px;
-      }
-    }
+    /* vw 단위 사용으로 브레이크포인트 불필요 - 자동 스케일링 */
 
     /* ========== 섹션 2: 재미있는 돈 모으기 ========== */
     .background.section2 {
@@ -981,16 +856,16 @@
     .section2-title {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: clamp(16px, 1.46vw, 28px);
       position: relative;
     }
 
     .section2-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1003,8 +878,8 @@
 
     .section2-title-box {
       position: relative;
-      height: 76px;
-      width: 240px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(180px, 12.5vw, 240px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1016,8 +891,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 240px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1029,11 +904,11 @@
     }
 
     .section2-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #4982bf;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -1049,16 +924,16 @@
     /* 섹션 2 카드 그리드 */
     .section2-cards {
       display: flex;
-      gap: 24px;
-      margin-top: 40px;
-      width: 1080px;
+      gap: clamp(16px, 1.25vw, 24px);
+      margin-top: clamp(24px, 2.08vw, 40px);
+      width: clamp(800px, 56.25vw, 1080px);
     }
 
     .section2-card {
       flex: 1;
-      height: 584px;
-      border-radius: 24px;
-      padding: 48px 36px 32px;
+      height: clamp(400px, 30.4vw, 584px);
+      border-radius: clamp(16px, 1.25vw, 24px);
+      padding: clamp(32px, 2.5vw, 48px) clamp(24px, 1.88vw, 36px) clamp(24px, 1.67vw, 32px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1091,15 +966,15 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: clamp(10px, 0.83vw, 16px);
     }
 
     .section2-card-title {
-      font-size: 32px;
+      font-size: clamp(20px, 1.67vw, 32px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.16px;
+      letter-spacing: -0.008em;
     }
 
     .section2-card-title .highlight {
@@ -1107,7 +982,7 @@
     }
 
     .section2-card-desc {
-      font-size: 16px;
+      font-size: clamp(12px, 0.83vw, 16px);
       font-weight: 500;
       color: #545b69;
       line-height: 1.35;
@@ -1120,76 +995,30 @@
     }
 
     .section2-card:nth-child(1) .section2-card-image {
-      width: 280px;
-      height: 280px;
+      width: clamp(180px, 14.6vw, 280px);
+      height: clamp(180px, 14.6vw, 280px);
     }
 
     .section2-card:nth-child(3) .section2-card-image {
-      width: 383px;
-      height: 298px;
+      width: clamp(180px, 14.6vw, 280px);
+      height: clamp(180px, 14.6vw, 280px);
     }
 
     /* 기분 이모지 그리드 */
     .emotion-grid {
       display: grid;
-      grid-template-columns: repeat(2, 140px);
-      grid-template-rows: repeat(2, 140px);
+      grid-template-columns: repeat(2, clamp(90px, 7.3vw, 140px));
+      grid-template-rows: repeat(2, clamp(90px, 7.3vw, 140px));
       gap: 0;
     }
 
     .emotion-grid img {
-      width: 140px;
-      height: 140px;
+      width: clamp(90px, 7.3vw, 140px);
+      height: clamp(90px, 7.3vw, 140px);
       object-fit: contain;
     }
 
-    /* 반응형 - 섹션 2 */
-    @media (max-width: 1200px) {
-      .section2-cards {
-        width: 100%;
-        max-width: 1080px;
-        padding: 0 24px;
-        gap: 16px;
-      }
-
-      .section2-card {
-        height: 500px;
-        padding: 32px 24px 24px;
-      }
-
-      .section2-card-title {
-        font-size: 26px;
-      }
-
-      .section2-card-desc {
-        font-size: 14px;
-      }
-
-      .section2-title-text,
-      .section2-title-highlight {
-        font-size: 44px;
-      }
-
-      .emotion-grid {
-        grid-template-columns: repeat(2, 100px);
-        grid-template-rows: repeat(2, 100px);
-      }
-
-      .emotion-grid img {
-        width: 100px;
-        height: 100px;
-      }
-
-      .section2-card:nth-child(1) .section2-card-image {
-        width: 200px;
-        height: 200px;
-      }
-
-      .section2-card:nth-child(3) .section2-card-image {
-        width: 280px;
-        height: 220px;
-      }
-    }
+    /* vw 단위 사용으로 섹션 2 브레이크포인트 불필요 */
 
     /* ========== 섹션 3: 카드 한 장으로 골라쓰는 혜택 ========== */
     .background.section3 {
@@ -1255,7 +1084,7 @@
     }
 
     .section3-title-text {
-      font-size: clamp(32px, 4vw, 56px);
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
@@ -1279,8 +1108,8 @@
 
     .section3-title-box {
       position: relative;
-      height: clamp(54px, 5.5vw, 76px);
-      width: clamp(96px, 9.6vw, 134px);
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(96px, 6.98vw, 134px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1312,7 +1141,7 @@
     }
 
     .section3-title-highlight {
-      font-size: clamp(32px, 4vw, 56px);
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
@@ -1333,10 +1162,10 @@
     /* 섹션 3 비디오 */
     .section3-video-container {
       position: absolute;
-      top: calc(180px + 76px);
+      top: calc(clamp(120px, 9.38vw, 180px) + clamp(56px, 3.96vw, 76px));
       left: 50%;
-      height: calc(100vh - 180px - 76px);
-      width: 900px;
+      height: calc(100vh - clamp(120px, 9.38vw, 180px) - clamp(56px, 3.96vw, 76px));
+      width: clamp(600px, 46.88vw, 900px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1354,7 +1183,7 @@
 
     .section3-video {
       width: 100%;
-      max-width: 800px;
+      max-width: clamp(540px, 41.67vw, 800px);
       height: auto;
       object-fit: contain;
       background: transparent;
@@ -1396,16 +1225,16 @@
     .section4-title {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: clamp(16px, 1.46vw, 28px);
       position: relative;
     }
 
     .section4-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1418,8 +1247,8 @@
 
     .section4-title-box {
       position: relative;
-      height: 76px;
-      width: 228px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(170px, 11.88vw, 228px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1431,8 +1260,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 228px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1444,11 +1273,11 @@
     }
 
     .section4-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #7354b2;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -1464,17 +1293,17 @@
     /* 섹션 4 카드 그리드 */
     .section4-cards {
       display: flex;
-      gap: 24px;
-      margin-top: 40px;
-      width: 1080px;
+      gap: clamp(16px, 1.25vw, 24px);
+      margin-top: clamp(24px, 2.08vw, 40px);
+      width: clamp(800px, 56.25vw, 1080px);
     }
 
     .section4-card {
       flex: 1;
-      height: 584px;
+      height: clamp(400px, 30.4vw, 584px);
       background: #f2ebff;
-      border-radius: 24px;
-      padding: 48px 36px 32px;
+      border-radius: clamp(16px, 1.25vw, 24px);
+      padding: clamp(32px, 2.5vw, 48px) clamp(24px, 1.88vw, 36px) clamp(24px, 1.67vw, 32px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1495,15 +1324,15 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: clamp(10px, 0.83vw, 16px);
     }
 
     .section4-card-title {
-      font-size: 32px;
+      font-size: clamp(20px, 1.67vw, 32px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.16px;
+      letter-spacing: -0.008em;
     }
 
     .section4-card-title .highlight {
@@ -1511,7 +1340,7 @@
     }
 
     .section4-card-desc {
-      font-size: 16px;
+      font-size: clamp(12px, 0.83vw, 16px);
       font-weight: 500;
       color: #545b69;
       line-height: 1.35;
@@ -1519,42 +1348,12 @@
     }
 
     .section4-card-image {
-      width: 280px;
-      height: 280px;
+      width: clamp(180px, 14.6vw, 280px);
+      height: clamp(180px, 14.6vw, 280px);
       object-fit: contain;
     }
 
-    @media (max-width: 1200px) {
-      .section4-cards {
-        width: 100%;
-        max-width: 1080px;
-        padding: 0 24px;
-        gap: 16px;
-      }
-
-      .section4-card {
-        height: 500px;
-        padding: 32px 24px 24px;
-      }
-
-      .section4-card-title {
-        font-size: 26px;
-      }
-
-      .section4-card-desc {
-        font-size: 14px;
-      }
-
-      .section4-title-text,
-      .section4-title-highlight {
-        font-size: 44px;
-      }
-
-      .section4-card-image {
-        width: 200px;
-        height: 200px;
-      }
-    }
+    /* vw 단위 사용으로 섹션 4 브레이크포인트 불필요 */
 
     /* ========== 섹션 5: 일상이 돈이 되는 마법 ========== */
     .background.section5 {
@@ -1570,7 +1369,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 80px;
+      gap: clamp(40px, 4.17vw, 80px);
       z-index: 5;
       opacity: 0;
       pointer-events: none;
@@ -1586,15 +1385,15 @@
     .section5-title-area {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: clamp(10px, 0.83vw, 16px);
     }
 
     .section5-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1607,8 +1406,8 @@
 
     .section5-title-box {
       position: relative;
-      height: 76px;
-      width: 134px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(100px, 7vw, 134px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1620,8 +1419,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 134px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1633,11 +1432,11 @@
     }
 
     .section5-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #3d7047;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -1652,9 +1451,9 @@
 
     /* 섹션 5 비디오 카드 (오른쪽) */
     .section5-video-card {
-      width: 563px;
-      height: 720px;
-      border-radius: 20px;
+      width: clamp(360px, 29.3vw, 563px);
+      height: clamp(460px, 37.5vw, 720px);
+      border-radius: clamp(12px, 1.04vw, 20px);
       overflow: hidden;
       position: relative;
       box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.1);
@@ -1686,9 +1485,9 @@
 
     .section5-video-content {
       position: absolute;
-      bottom: 60px;
-      left: 60px;
-      right: 60px;
+      bottom: clamp(32px, 3.13vw, 60px);
+      left: clamp(32px, 3.13vw, 60px);
+      right: clamp(32px, 3.13vw, 60px);
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -1697,19 +1496,19 @@
     .section5-video-text {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: clamp(8px, 0.63vw, 12px);
     }
 
     .section5-video-title {
-      font-size: 44px;
+      font-size: clamp(26px, 2.29vw, 44px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.22px;
+      letter-spacing: -0.011em;
     }
 
     .section5-video-desc {
-      font-size: 16px;
+      font-size: clamp(12px, 0.83vw, 16px);
       font-weight: 500;
       color: white;
       line-height: 1.35;
@@ -1718,13 +1517,13 @@
 
     .section5-video-indicator {
       display: flex;
-      gap: 4px;
+      gap: clamp(3px, 0.21vw, 4px);
       align-items: center;
     }
 
     .section5-indicator-dot {
-      width: 8px;
-      height: 8px;
+      width: clamp(6px, 0.42vw, 8px);
+      height: clamp(6px, 0.42vw, 8px);
       border-radius: 50%;
       background: white;
     }
@@ -1732,13 +1531,13 @@
     .section5-indicator-dot.inactive {
       background: transparent;
       border: 1.5px solid rgba(255, 255, 255, 0.5);
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
     }
 
     .section5-indicator-pause {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1747,7 +1546,7 @@
 
     .section5-indicator-pause span {
       width: 2px;
-      height: 9px;
+      height: clamp(6px, 0.47vw, 9px);
       background: white;
       border-radius: 1px;
     }
@@ -1787,16 +1586,16 @@
 
     .section5-slide .section5-video-content {
       position: absolute;
-      bottom: 60px;
-      left: 60px;
-      right: 60px;
+      bottom: clamp(40px, 3.13vw, 60px);
+      left: clamp(40px, 3.13vw, 60px);
+      right: clamp(40px, 3.13vw, 60px);
     }
 
     /* 인디케이터 수정 */
     .section5-video-indicator {
       position: absolute;
-      bottom: 60px;
-      right: 60px;
+      bottom: clamp(40px, 3.13vw, 60px);
+      right: clamp(40px, 3.13vw, 60px);
       display: flex;
       gap: 4px;
       align-items: center;
@@ -1804,8 +1603,8 @@
     }
 
     .section5-indicator-dot {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       border-radius: 50%;
       border: 1.5px solid rgba(255, 255, 255, 0.5);
       background: transparent;
@@ -1814,8 +1613,8 @@
     }
 
     .section5-indicator-dot.active {
-      width: 8px;
-      height: 8px;
+      width: clamp(6px, 0.42vw, 8px);
+      height: clamp(6px, 0.42vw, 8px);
       border: none;
       background: white;
     }
@@ -1825,8 +1624,8 @@
     }
 
     .section5-indicator-playcontrol {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 0.63vw, 12px);
+      height: clamp(8px, 0.63vw, 12px);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -1860,7 +1659,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 80px;
+      gap: clamp(50px, 4.17vw, 80px);
       z-index: 5;
       opacity: 0;
       pointer-events: none;
@@ -1876,15 +1675,15 @@
     .section6-title-area {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: clamp(10px, 0.83vw, 16px);
     }
 
     .section6-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1897,8 +1696,8 @@
 
     .section6-title-box {
       position: relative;
-      height: 76px;
-      width: 280px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(200px, 14.6vw, 280px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1910,8 +1709,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 280px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1923,11 +1722,11 @@
     }
 
     .section6-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #6790b7;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -1942,15 +1741,15 @@
 
     /* 섹션 6 카드 (오른쪽) */
     .section6-card {
-      width: 564px;
-      height: 720px;
-      border-radius: 20px;
+      width: clamp(360px, 29.4vw, 564px);
+      height: clamp(460px, 37.5vw, 720px);
+      border-radius: clamp(12px, 1.04vw, 20px);
       background: #e0e6f1;
-      padding: 48px;
+      padding: clamp(32px, 2.5vw, 48px);
       box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: clamp(32px, 2.5vw, 48px);
       position: relative;
       overflow: hidden;
       opacity: 0;
@@ -1964,11 +1763,11 @@
     }
 
     .section6-card-title {
-      font-size: 44px;
+      font-size: clamp(26px, 2.29vw, 44px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.22px;
+      letter-spacing: -0.011em;
     }
 
     .section6-card-title .highlight {
@@ -1977,21 +1776,21 @@
 
     .section6-phone-container {
       position: absolute;
-      top: 273px;
+      top: clamp(180px, 14.2vw, 273px);
       left: 50%;
       transform: translateX(-50%);
-      width: 320px;
-      height: 684px;
+      width: clamp(200px, 16.67vw, 320px);
+      height: clamp(427px, 35.6vw, 684px);
     }
 
     .section6-phone-frame {
       position: absolute;
       top: 0;
       left: 0;
-      width: 320px;
-      height: 684px;
-      border: 8px solid #515151;
-      border-radius: 24px;
+      width: 100%;
+      height: 100%;
+      border: clamp(5px, 0.42vw, 8px) solid #515151;
+      border-radius: clamp(15px, 1.25vw, 24px);
       z-index: 2;
       pointer-events: none;
       box-sizing: border-box;
@@ -1999,11 +1798,11 @@
 
     .section6-phone-screen {
       position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 304px;
-      height: 668px;
-      border-radius: 16px;
+      top: clamp(5px, 0.42vw, 8px);
+      left: clamp(5px, 0.42vw, 8px);
+      width: calc(100% - clamp(10px, 0.84vw, 16px));
+      height: calc(100% - clamp(10px, 0.84vw, 16px));
+      border-radius: clamp(10px, 0.83vw, 16px);
       object-fit: cover;
       z-index: 1;
     }
@@ -2038,16 +1837,16 @@
     .section7-title {
       display: flex;
       align-items: center;
-      gap: 28px;
-      margin-bottom: 60px;
+      gap: clamp(16px, 1.46vw, 28px);
+      margin-bottom: clamp(36px, 3.13vw, 60px);
     }
 
     .section7-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -2060,8 +1859,8 @@
 
     .section7-title-box {
       position: relative;
-      height: 76px;
-      width: 188px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(140px, 9.79vw, 188px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2073,8 +1872,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 188px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -2086,11 +1885,11 @@
     }
 
     .section7-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #2f1d71;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -2106,9 +1905,9 @@
     /* 섹션 7 카드 컨테이너 */
     .section7-cards {
       display: flex;
-      gap: 24px;
-      width: 1060px;
-      height: 584px;
+      gap: clamp(16px, 1.25vw, 24px);
+      width: clamp(700px, 55.2vw, 1060px);
+      height: clamp(400px, 30.4vw, 584px);
       opacity: 0;
       transform: translateY(60px);
       transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2121,26 +1920,26 @@
 
     /* 섹션 7 카드 공통 */
     .section7-card {
-      width: 518px;
-      height: 584px;
-      border-radius: 20px;
+      width: clamp(340px, 27vw, 518px);
+      height: clamp(400px, 30.4vw, 584px);
+      border-radius: clamp(12px, 1.04vw, 20px);
       background: #e6ebff;
-      padding: 48px;
+      padding: clamp(32px, 2.5vw, 48px);
       box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: clamp(32px, 2.5vw, 48px);
       align-items: center;
     }
 
     .section7-card-title {
-      font-size: 44px;
+      font-size: clamp(26px, 2.29vw, 44px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.22px;
+      letter-spacing: -0.011em;
       width: 100%;
     }
 
@@ -2151,8 +1950,8 @@
     /* 카드 1: 폰 목업 */
     .section7-phone-container {
       position: relative;
-      width: 274px;
-      height: 311px;
+      width: clamp(180px, 14.3vw, 274px);
+      height: clamp(205px, 16.2vw, 311px);
       flex-shrink: 0;
     }
 
@@ -2160,12 +1959,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 274px;
-      height: 311px;
+      width: 100%;
+      height: 100%;
       border-width: 3px 3px 0 3px;
       border-style: solid;
       border-color: black;
-      border-radius: 20px 20px 0 0;
+      border-radius: clamp(12px, 1.04vw, 20px) clamp(12px, 1.04vw, 20px) 0 0;
       z-index: 2;
       pointer-events: none;
       box-sizing: border-box;
@@ -2173,11 +1972,11 @@
 
     .section7-phone-screen {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 274px;
-      height: 311px;
-      border-radius: 20px 20px 0 0;
+      top: 3px;
+      left: 3px;
+      width: calc(100% - 6px);
+      height: calc(100% - 3px);
+      border-radius: clamp(10px, 0.88vw, 17px) clamp(10px, 0.88vw, 17px) 0 0;
       object-fit: cover;
       object-position: top;
       z-index: 1;
@@ -2193,30 +1992,30 @@
     .section7-stats-content {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: clamp(12px, 0.94vw, 18px);
     }
 
     .section7-profiles {
       position: relative;
-      width: 185px;
-      height: 47px;
+      width: clamp(120px, 9.64vw, 185px);
+      height: clamp(30px, 2.45vw, 47px);
     }
 
     .section7-profile-img {
       position: absolute;
       left: -8px;
       top: 0;
-      width: 189px;
-      height: 47px;
+      width: clamp(125px, 9.84vw, 189px);
+      height: clamp(30px, 2.45vw, 47px);
       object-fit: cover;
     }
 
     .section7-profile-more {
       position: absolute;
-      left: 138px;
+      left: clamp(90px, 7.19vw, 138px);
       top: 0;
-      width: 47px;
-      height: 47px;
+      width: clamp(30px, 2.45vw, 47px);
+      height: clamp(30px, 2.45vw, 47px);
     }
 
     .section7-profile-more img {
@@ -2225,24 +2024,24 @@
     }
 
     .section7-stats-label {
-      font-size: 24px;
+      font-size: clamp(16px, 1.25vw, 24px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.12px;
+      letter-spacing: -0.006em;
     }
 
     .section7-stats-number {
-      font-size: 72px;
+      font-size: clamp(44px, 3.75vw, 72px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.36px;
+      letter-spacing: -0.019em;
       font-variant-numeric: tabular-nums;
     }
 
     .section7-stats-date {
-      font-size: 16px;
+      font-size: clamp(12px, 0.83vw, 16px);
       font-weight: 400;
       color: #545b69;
       opacity: 0.8;
@@ -2282,15 +2081,15 @@
     .section8-title {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: clamp(16px, 1.46vw, 28px);
     }
 
     .section8-title-text {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: white;
       line-height: 1.35;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.015em;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -2303,8 +2102,8 @@
 
     .section8-title-box {
       position: relative;
-      height: 76px;
-      width: 180px;
+      height: clamp(56px, 3.96vw, 76px);
+      width: clamp(130px, 9.38vw, 180px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2316,8 +2115,8 @@
       left: 0;
       background: #f2f2f7;
       border-radius: 8px;
-      height: 76px;
-      width: 180px;
+      height: 100%;
+      width: 100%;
       opacity: 0;
       transform: translateX(-100%);
       transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -2329,11 +2128,11 @@
     }
 
     .section8-title-highlight {
-      font-size: 56px;
+      font-size: clamp(32px, 2.92vw, 56px);
       font-weight: 700;
       color: #0114a7;
-      line-height: 76px;
-      letter-spacing: -0.28px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
       position: relative;
       z-index: 1;
       text-align: center;
@@ -2411,7 +2210,7 @@
 
     /* 스토리 타이틀 래퍼 - 콘텐츠와 함께 스크롤 */
     .section8-story-title-wrapper {
-      padding-top: 152px;
+      padding-top: clamp(100px, 7.92vw, 152px);
       padding-bottom: 0;
       display: flex;
       justify-content: center;
@@ -2429,8 +2228,8 @@
     }
 
     .section8-footer .footer-top {
-      padding-top: 264px;
-      padding-bottom: 160px;
+      padding-top: clamp(160px, 13.75vw, 264px);
+      padding-bottom: clamp(100px, 8.33vw, 160px);
     }
 
     .section8-footer .footer-logo-wrapper {
@@ -2495,48 +2294,35 @@
     /* 컨텐츠 리스트 */
     .section8-contents-list {
       display: flex;
-      gap: 24px;
-      padding: 0 160px;
+      gap: clamp(16px, 1.25vw, 24px);
+      padding: 0 clamp(100px, 8.33vw, 160px);
       transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     /* 스토리 카드 */
     .section8-story-card {
       flex-shrink: 0;
-      width: calc((100vw - 320px - 48px) / 2);
-      max-width: 640px;
-      min-width: 400px;
+      width: min(calc((100vw - 320px - 48px) / 2), 580px);
+      max-width: 580px;
+      min-width: clamp(300px, 20.83vw, 400px);
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: clamp(16px, 1.25vw, 24px);
       cursor: pointer;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
     }
 
-    /* 1920px 기준에서 580px */
-    @media (min-width: 1920px) {
-      .section8-story-card {
-        width: 580px;
-      }
-    }
-
     .section8-story-card:hover {
       transform: scale(1.1);
       z-index: 10;
-      margin: 0 calc((0.1 * (100vw - 320px - 48px) / 2) / 2);
-    }
-
-    @media (min-width: 1920px) {
-      .section8-story-card:hover {
-        margin: 0 29px;
-      }
+      margin: 0 29px;
     }
 
     .section8-story-card-image-wrapper {
       width: 100%;
       aspect-ratio: 540 / 368;
-      border-radius: 24px;
+      border-radius: clamp(16px, 1.25vw, 24px);
       overflow: hidden;
       background-color: #e0e6f1;
     }
@@ -2544,7 +2330,7 @@
     .section8-story-card-image {
       width: 100%;
       height: 100%;
-      border-radius: 26px;
+      border-radius: clamp(17px, 1.35vw, 26px);
       object-fit: cover;
       transition: transform 0.3s ease;
     }
@@ -2616,14 +2402,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: clamp(20px, 1.67vw, 32px);
       background: white;
-      padding-bottom: 80px;
+      padding-bottom: clamp(50px, 4.17vw, 80px);
     }
 
     .footer-logo-wrapper {
-      width: 132px;
-      height: 132px;
+      width: clamp(90px, 6.88vw, 132px);
+      height: clamp(90px, 6.88vw, 132px);
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -2638,15 +2424,15 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 28px;
+      border-radius: clamp(18px, 1.46vw, 28px);
     }
 
     .footer-title {
-      font-size: 32px;
+      font-size: clamp(20px, 1.67vw, 32px);
       font-weight: 700;
       color: #17191e;
       line-height: 1.35;
-      letter-spacing: -0.16px;
+      letter-spacing: -0.008em;
       text-align: center;
       opacity: 0;
       transform: translateY(20px);
@@ -2661,7 +2447,7 @@
     /* 푸터 하단 영역 */
     .footer-bottom {
       background: #f7f8fb;
-      padding: 36px 0 56px;
+      padding: clamp(24px, 1.88vw, 36px) 0 clamp(36px, 2.92vw, 56px);
       min-width: 1080px;
       display: flex;
       justify-content: center;
@@ -2676,21 +2462,21 @@
     }
 
     .footer-inner {
-      width: 1080px;
+      width: clamp(800px, 56.25vw, 1080px);
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: clamp(28px, 2.08vw, 40px);
     }
 
     /* 고객센터 */
     .footer-customer-center {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: clamp(8px, 0.63vw, 12px);
     }
 
     .footer-section-title {
-      font-size: 18px;
+      font-size: clamp(14px, 0.94vw, 18px);
       font-weight: 700;
       color: #2a2e36;
       line-height: 1.35;
@@ -2698,14 +2484,14 @@
 
     .footer-contact-list {
       display: flex;
-      gap: 28px;
+      gap: clamp(18px, 1.46vw, 28px);
       padding-left: 10px;
     }
 
     .footer-contact-item {
       display: flex;
       gap: 8px;
-      font-size: 15px;
+      font-size: clamp(12px, 0.78vw, 15px);
       font-weight: 400;
       color: #2a2e36;
       line-height: 1.35;
@@ -2721,16 +2507,16 @@
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 20px;
+      gap: 8px clamp(14px, 1.04vw, 20px);
     }
 
     .footer-link {
       padding: 0 10px;
-      height: 32px;
+      height: clamp(24px, 1.67vw, 32px);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: clamp(11px, 0.73vw, 14px);
       font-weight: 400;
       color: #2a2e36;
       line-height: 1.35;
@@ -2746,24 +2532,24 @@
     /* 인증 및 소셜 */
     .footer-certification {
       display: flex;
-      gap: 28px;
+      gap: clamp(18px, 1.46vw, 28px);
       align-items: center;
-      padding: 12px 0;
+      padding: clamp(8px, 0.63vw, 12px) 0;
     }
 
     .footer-cert-logos {
       display: flex;
-      gap: 12px;
+      gap: clamp(8px, 0.63vw, 12px);
       align-items: center;
     }
 
     .footer-cert-logo {
-      height: 40px;
+      height: clamp(28px, 2.08vw, 40px);
       object-fit: contain;
     }
 
     .footer-cert-text {
-      font-size: 15px;
+      font-size: clamp(12px, 0.78vw, 15px);
       font-weight: 400;
       color: #2a2e36;
       line-height: 1.6;
@@ -2772,13 +2558,13 @@
 
     .footer-social {
       display: flex;
-      gap: 12px;
+      gap: clamp(8px, 0.63vw, 12px);
       align-items: center;
     }
 
     .footer-social-icon {
-      width: 36px;
-      height: 36px;
+      width: clamp(28px, 1.88vw, 36px);
+      height: clamp(28px, 1.88vw, 36px);
       border-radius: 50%;
       background: #8694b1;
       display: flex;
@@ -2793,28 +2579,90 @@
     }
 
     .footer-social-icon svg {
-      width: 18px;
-      height: 18px;
+      width: clamp(14px, 0.94vw, 18px);
+      height: clamp(14px, 0.94vw, 18px);
       fill: white;
     }
 
-    @media (max-width: 1200px) {
-      .footer-inner {
-        width: 100%;
-        padding: 0 40px;
-      }
+    /* vw 단위 사용으로 푸터 브레이크포인트 불필요 */
 
-      .footer-title {
-        font-size: 28px;
-      }
+    /* A/B 비교 토글 바 */
+    .ab-toggle-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 48px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 10001;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
 
-      .footer-certification {
-        flex-wrap: wrap;
-      }
+    .ab-toggle-bar .ab-label {
+      color: #a0a0a0;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .ab-toggle-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ab-toggle-btn {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      color: #a0a0a0;
+    }
+
+    .ab-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .ab-toggle-btn.active {
+      background: #4262ff;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(66, 98, 255, 0.4);
+    }
+
+    .ab-toggle-btn.active.version-b {
+      background: #ff6b6b;
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+    }
+
+    /* 헤더 위치 조정 (토글바 높이만큼) */
+    .global-header {
+      top: 48px !important;
+    }
+
+    /* 컨테이너 패딩 조정 */
+    body {
+      padding-top: 48px;
     }
   </style>
 </head>
 <body>
+  <!-- A/B 비교 토글 바 -->
+  <div class="ab-toggle-bar">
+    <span class="ab-label">사이드 카드 이미지 비교:</span>
+    <div class="ab-toggle-buttons">
+      <button class="ab-toggle-btn active" data-version="a">A안 (현재)</button>
+      <button class="ab-toggle-btn version-b" data-version="b">B안 (신규)</button>
+    </div>
+  </div>
+
   <div class="global-header" data-name="GlobalHeader">
     <div class="header-content" data-name="ContainerGroup">
       <div class="header-logo-box" data-name="BrandLogoBox">
@@ -2879,9 +2727,6 @@
             <div class="main-card-slide" data-slide="2">
               <img src="./images/main-card3.png" alt="메인 이미지 3">
             </div>
-            <div class="main-card-slide" data-slide="3">
-              <img src="./images/main-card4.png" alt="메인 이미지 4">
-            </div>
           </div>
           <div class="main-card-content">
             <div class="main-card-title-group">
@@ -2892,7 +2737,7 @@
                 복잡한 금융을 가깝고 편리하게 매일을 기분 좋은 일상으로 만들어보세요
               </div>
             </div>
-            <button class="main-card-button">브랜드 스토리 보기</button>
+            <button class="main-card-button">브랜드 스토리 둘러보기</button>
           </div>
           <div class="main-card-indicator">
             <button type="button" class="indicator-dot" data-index="0" aria-label="슬라이드 1">
@@ -2904,9 +2749,6 @@
             <button type="button" class="indicator-dot" data-index="2" aria-label="슬라이드 3">
               <img src="./images/indicator-dot.svg" alt="" />
             </button>
-            <button type="button" class="indicator-dot" data-index="3" aria-label="슬라이드 4">
-              <img src="./images/indicator-dot.svg" alt="" />
-            </button>
             <button type="button" class="indicator-control" aria-label="자동 재생 일시정지">
               <img src="./images/indicator-pause.svg" alt="" class="indicator-icon" />
             </button>
@@ -2916,7 +2758,7 @@
         <!-- 사이드 카드: 426px x 420px (2개) -->
         <div class="side-cards">
           <div class="side-card">
-            <img src="./images/side-card-1.png" alt="" class="side-card-image" />
+            <img src="./images/side-card-1.png" alt="" class="side-card-image" id="side-card-1-img" />
             <div class="side-card-gradient"></div>
             <div class="side-card-content">
               <div class="side-card-title">
@@ -3203,7 +3045,7 @@
           </div>
           <div class="section7-phone-container">
             <div class="section7-phone-frame"></div>
-            <img src="./images/section7-phone.png" alt="사장님 홈" class="section7-phone-screen" />
+            <img src="images/section7-phone.png" alt="사장님 홈" class="section7-phone-screen" />
           </div>
         </div>
 
@@ -3500,10 +3342,32 @@
     const mainCardIndicatorDots = document.querySelectorAll('.main-card-indicator .indicator-dot');
     const mainCardControlBtn = document.querySelector('.main-card-indicator .indicator-control');
     const mainCardControlIcon = mainCardControlBtn ? mainCardControlBtn.querySelector('.indicator-icon') : null;
+    const mainCardTitle = document.querySelector('.main-card-title');
+    const mainCardSubtitle = document.querySelector('.main-card-subtitle');
+    const mainCardButton = document.querySelector('.main-card-button');
     let mainCardCurrentSlide = 0;
     let mainCardAutoPlay = true;
     let mainCardInterval = null;
-    const mainCardIntervalTime = 4000; // 4초 간격
+    const mainCardIntervalTime = 4200; // 4.2초 간격
+
+    // 슬라이드별 콘텐츠 데이터
+    const mainCardContents = [
+      {
+        title: '나의 금융생활이<br>즐거움으로 가득해지도록',
+        subtitle: '복잡한 금융을 가깝고 편리하게 매일을 기분 좋은 일상으로 만들어보세요',
+        button: '브랜드 스토리 둘러보기'
+      },
+      {
+        title: '안심하고 이용할 수 있는<br>기분 좋은 금융 생활을 위해',
+        subtitle: '케이뱅크의 중요한 정보를 투명하게 전해드려요',
+        button: '투자정보 확인하기'
+      },
+      {
+        title: '케이뱅크가 전하는<br>새로운 이야기',
+        subtitle: '가볍게 읽고 편하게 즐길 수 있는 금융 소식을 전해드려요',
+        button: '케이뱅크 블로그 방문하기'
+      }
+    ];
 
     // 섹션 2 요소들
     const section2Content = document.querySelector('.section2-content');
@@ -5172,6 +5036,14 @@
       if (currentDotImg) {
         currentDotImg.src = './images/indicator-dot-active.svg';
       }
+
+      // 콘텐츠 업데이트
+      const content = mainCardContents[index];
+      if (content) {
+        if (mainCardTitle) mainCardTitle.innerHTML = content.title;
+        if (mainCardSubtitle) mainCardSubtitle.textContent = content.subtitle;
+        if (mainCardButton) mainCardButton.textContent = content.button;
+      }
     }
 
     function mainCardNextSlide() {
@@ -5259,6 +5131,39 @@
 
     // 페이지 로드 시 슬라이더는 섹션 1 진입 시 시작되도록
     // (초기에는 hero 화면이므로 시작하지 않음)
+
+    // ========== A/B 이미지 비교 토글 기능 ==========
+    const abToggleBtns = document.querySelectorAll('.ab-toggle-btn');
+    const sideCard1Img = document.getElementById('side-card-1-img');
+
+    const imageVersions = {
+      a: './images/side-card-1.png',
+      b: './images/side-card-1-2.png'
+    };
+
+    abToggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const version = btn.dataset.version;
+        
+        // 버튼 활성화 상태 변경
+        abToggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // 이미지 변경
+        if (sideCard1Img && imageVersions[version]) {
+          sideCard1Img.style.opacity = '0';
+          setTimeout(() => {
+            sideCard1Img.src = imageVersions[version];
+            sideCard1Img.style.opacity = '1';
+          }, 200);
+        }
+      });
+    });
+
+    // 이미지 전환 애니메이션을 위한 스타일 추가
+    if (sideCard1Img) {
+      sideCard1Img.style.transition = 'opacity 0.2s ease';
+    }
   </script>
 </body>
 </html>
