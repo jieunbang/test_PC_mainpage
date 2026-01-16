@@ -763,24 +763,31 @@
 
     /* 인재영입, 기업뱅킹 링크 아이템 */
     .header-link-item {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2px;
+      gap: 0;
     }
 
     .header-link-icon {
-      width: clamp(10px, 0.73vw, 14px);
+      width: 0;
       height: clamp(16px, 1.25vw, 24px);
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: center;
       opacity: 0;
-      transition: opacity 0.2s ease;
+      overflow: hidden;
+      transition: opacity 0.2s ease, width 0.2s ease;
+    }
+
+    .header-link-icon svg {
+      flex-shrink: 0;
     }
 
     .header-link-item:hover .header-link-icon {
       opacity: 1;
+      width: clamp(14px, 1vw, 18px);
     }
 
     .header-link-icon svg {
@@ -2839,7 +2846,7 @@
             </div>
             <div class="section2-card-desc">
               하루하루 입금할 때마다<br>
-              릴로와 스티치의 이야기가 펼쳐져요
+              재미있는 수키도키 짤을 만나요
             </div>
           </div>
           <img src="./images/card3-img.png" alt="" class="section2-card-image" />
